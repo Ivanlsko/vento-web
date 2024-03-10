@@ -1,5 +1,5 @@
 <script type="ts" setup>
-const ButtonBase = require('./ButtonBase.vue')
+import ButtonBase from './ButtonBase.vue'
 </script>
 
 <template>
