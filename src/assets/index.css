@@ -3,8 +3,39 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  html {
+    @apply sm:text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[20px];
+  }
+}
+/* @font-face {
+  font-family: 'Satoshi';
+  src: url('fonts/fira/eot/FiraSans-Regular.eot');
+}
+ */
+
+html {
+  font-size: 16px;
+}
+
 .flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+section {
+  padding: 100px 60px 100px;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 80px 40px 80px;
+  }
+}
+
+/* sm	640px	@media (min-width: 640px) { ... }
+md	768px	@media (min-width: 768px) { ... }
+lg	1024px	@media (min-width: 1024px) { ... }
+xl	1280px	@media (min-width: 1280px) { ... }
+2xl	1536px	@media (min-width: 1536px) { ... } */
