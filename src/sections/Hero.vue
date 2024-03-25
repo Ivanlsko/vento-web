@@ -1,7 +1,9 @@
 <script setup></script>
 
 <template>
-  <section class="bg-[url('../assets/images/cover.jpg')] w-full h-screen bg-cover flex-center">
+  <section
+    class="bg-[url('../assets/images/vertical-cover.jpg')] bg-top min-h-[1000px] lg:bg-[url('../assets/images/cover.jpg')] w-full h-screen bg-cover flex-center lg:bg-center bg-no-repeat"
+  >
     <div id="hero-content" class="text-white mx-8 lg:mx-24 mt-28">
       <h1 class="col-span-2 text-5xl mb-20">
         Vento kvintet je dychové hudobné teleso tvorené piatimi profesionálmi.
