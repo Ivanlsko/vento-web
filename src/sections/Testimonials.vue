@@ -4,7 +4,8 @@ const testimonials = [
   {
     author: {
       name: 'Dagmar Duždová',
-      role: 'Klaviristka, riaditeľka ARTIS festivalu'
+      role: 'Klaviristka, riaditeľka ARTIS festivalu',
+      imageLink: 'https://vento.sk/media/duzdova.webp'
     },
     testimonial:
       '“Vento kvintet je zanietený, svieži mladý súbor, ktorý si  zaslúži poslucháčsku pozornosť. Ako skupina sú dokonale zohraní, súzniaci spoločným pohľadom na hudbu, ktorú napĺňajú nadšením a dychtivosťou po dokonalosti. Vystúpenie takejto kvality si dovoľujem označiť za perfektnú reklamu komornej hudbe a dychovým zoskupeniam.'
@@ -12,7 +13,8 @@ const testimonials = [
   {
     author: {
       name: 'Igor Dohovič',
-      role: 'Dirigent orchestra NDKE'
+      role: 'Dirigent orchestra NDKE',
+      imageLink: 'https://vento.sk/media/dohovic.webp'
     },
     testimonial:
       '“Pri každom umeleckom alebo ľudskom kontakte s členmi kvinteta VENTO prežívam mimoriadne pozitívne emócie. Či už je to umelecký zážitok z ich výkonov, či spoločná spolupráca alebo len obyčajný rozhovor na ulici, vždy spôsobujú veľké potešenie. Ich ľudskosť, umelecká zrelosť a nadšenie sú zárukou nezabudnuteľných zážitkov.'
@@ -20,7 +22,8 @@ const testimonials = [
   {
     author: {
       name: 'Katarína Burgrová',
-      role: 'Muzikologička, hudobná kritička'
+      role: 'Muzikologička, hudobná kritička',
+      imageLink: 'https://vento.sk/media/burgrova.webp'
     },
     testimonial:
       '“Vznik nového komorného telesa na Slovensku je výrazným počinom pre spestrenie hudobno-kultúrneho života v tomto regióne. Dychové kvinteto so svojou farbou zvuku bude určite veľkým potešením pre ich poslucháčov. Ich prvotné koncerty boli predzvesťou kultúrnych zážitkov vysokej interpretačnej kvality.'
