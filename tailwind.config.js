@@ -11,11 +11,20 @@ module.exports = {
     fontSize: {
       sm: ['0.9rem', { lineHeight: '1.389' }],
       base: ['1rem', { lineHeight: '1.4' }],
+      lg: ['1.2rem', { lineHeight: '1.4' }],
       xl: ['1.4rem', { lineHeight: '1.393' }],
       '2xl': ['1.5rem', { lineHeight: '1.4' }],
       '3xl': ['2rem', { lineHeight: '1.4' }],
       '4xl': ['2.2rem', { lineHeight: '1.34' }],
       '5xl': ['3.7rem', { lineHeight: '1.243', letterSpacing: '-0.01em' }]
+    },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      white: '#ffffff',
+      black: '#000000',
+      darkgrey: '#161616',
+      lightgrey: '#EFF3F5'
     },
     extend: {}
   },
