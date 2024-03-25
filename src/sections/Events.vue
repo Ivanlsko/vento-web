@@ -21,7 +21,7 @@ const dropdownContent = {
 </script>
 
 <template>
-  <section class="w-full flex justify-end">
+  <section id="events" class="w-full flex justify-end">
     <div class="w-full lg:w-3/5">
       <h2 class="text-3xl mb-12">
         V našom repertoári sa nachádzajú primárne klasické kompozície. Budeme pre to vhodnou voľbou

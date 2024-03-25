@@ -26,7 +26,7 @@ const aboutBlocksContent = [
 </script>
 
 <template>
-  <section>
+  <section id="about" class="relative h-[400vh]">
     <AboutBlockBase
       v-for="(aboutBlock, key) in aboutBlocksContent"
       :content="aboutBlock"
