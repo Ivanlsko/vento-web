@@ -1,8 +1,51 @@
 <script setup>
+import { ref } from 'vue'
 import ButtonBase from './ButtonBase.vue'
+import axios from 'axios'
+
+const name = ref('')
+const date = ref('')
+const email = ref('')
+const message = ref('')
+
+function sendMail() {
+  const data = {
+    name: name.value,
+    email: email.value,
+    date: date.value,
+    message: message.value
+  }
+
+  const endpoint = 'http://localhost:3000/api/send-email'
+
+  axios
+    .post(endpoint, data, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then((response) => {
+      console.log('Response:', response.data)
+      console.log('Email sent successfully!')
+    })
+    .catch((error) => {
+      console.error('Error:', error)
+    })
+}
 </script>
 <template>
-  <form action="mailto:booking@vento.sk" method="post" enctype="text/plain">
+  <form @submit.prevent>
+    <div>
+      <label for="email">Vaša emailová adresa</label><br />
+      <input
+        class="border-b-[1px] border-black w-full mt-6 mb-8"
+        type="text"
+        id="email"
+        name="email"
+        v-model="email"
+        required
+      /><br />
+    </div>
     <div>
       <label for="name">Meno a priezvisko</label><br />
       <input
@@ -10,6 +53,7 @@ import ButtonBase from './ButtonBase.vue'
         type="text"
         id="name"
         name="name"
+        v-model="name"
         required
       /><br />
     </div>
@@ -21,6 +65,7 @@ import ButtonBase from './ButtonBase.vue'
         id="date"
         name="date"
         placeholder=""
+        v-model="date"
         required
       /><br />
     </div>
@@ -32,6 +77,7 @@ import ButtonBase from './ButtonBase.vue'
         name="text"
         rows="4"
         cols="50"
+        v-model="message"
         required
       ></textarea
       ><br />
@@ -42,6 +88,7 @@ import ButtonBase from './ButtonBase.vue'
         :content="'Odoslať správu'"
         type="submit"
         value="Submit"
+        @click="sendMail"
       ></ButtonBase>
     </div>
   </form>
