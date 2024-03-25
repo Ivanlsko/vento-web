@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
 import ButtonBase from './ButtonBase.vue'
+import NavbarList from './NavbarList.vue'
 
 const windowWidth = ref(window.innerWidth)
 const menuOpened = ref(false)
@@ -16,41 +17,44 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('resize', handleResize)
 })
+
+function handleMenu() {
+  this.menuOpened = !this.menuOpened
+  if (this.menuOpened) {
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = 'unset'
+  }
+}
 </script>
 
 <template>
   <nav v-if="!menuOpened" class="flex justify-between absolute top-0 w-full p-6 text-white">
     <div id="logo"><img src="../assets/images/vento.svg" alt="logo vento kvintet" /></div>
     <div v-if="windowWidth < 768">
-      <div @click="menuOpened = !menuOpened" id="menu" class="z-50"></div>
+      <div @click="handleMenu()" class="h-8 w-8">
+        <img src="../assets/icons/menu.svg" alt="close menu icon" class="h-full" />
+      </div>
     </div>
     <div v-else class="flex">
       <ul class="flex items-center mr-4">
-        <li class="mr-4"><a href=""></a>Služby</li>
-        <li class="mr-4"><a href=""></a>O nás</li>
-        <li class="mr-4"><a href=""></a>Členovia</li>
+        <NavbarList></NavbarList>
       </ul>
       <ButtonBase :content="'Ozvite sa nám'"></ButtonBase>
     </div>
   </nav>
-  <div v-else class="w-full h-screen bg-white fixed top-0 overflow-hidden">
+  <div v-else class="w-full h-screen bg-white fixed top-0 overflow-hidden flex flex-col">
     <div class="flex justify-end w-full p-6 text-white">
-      <div @click="menuOpened = !menuOpened" id="menu"></div>
+      <div @click="handleMenu()" class="mr-[15px] h-8 w-8">
+        <img src="../assets/icons/close.svg" alt="close menu icon" class="h-full" />
+      </div>
     </div>
-    <nav>
-      <ul class="flex-center flex-col">
-        <li class="mr-4"><a href=""></a>Služby</li>
-        <li class="mr-4"><a href=""></a>O nás</li>
-        <li class="mr-4"><a href=""></a>Členovia</li>
+    <nav class="grow flex-center">
+      <ul class="flex-center flex-col grow gap-6 text-4xl">
+        <NavbarList></NavbarList>
       </ul>
     </nav>
   </div>
 </template>
 
-<style scoped>
-#menu {
-  width: 20px;
-  height: 20px;
-  background-color: black;
-}
-</style>
+<style scoped></style>
