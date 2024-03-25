@@ -5,7 +5,7 @@ import FooterBase from './components/FooterBase.vue'
 </script>
 
 <template>
-  <div class="w-max-screen overflow-hidden">
+  <div class="w-max-screen">
     <NavbarBase></NavbarBase>
     <RouterView></RouterView>
     <FooterBase></FooterBase>
