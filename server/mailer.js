@@ -2,12 +2,11 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
 const cors = require('cors')
-const config = require('./config')
 
 const emailPassword =
   process.env.NODE_ENV === 'production'
     ? process.env.EMAIL_PASSWORD
-    : config.development.emailPassword
+    : require('./config').development.emailPassword
 
 const app = express()
 const PORT = process.env.PORT || 3000
