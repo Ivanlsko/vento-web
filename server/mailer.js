@@ -2,6 +2,12 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
 const cors = require('cors')
+const config = require('./config')
+
+const emailPassword =
+  process.env.NODE_ENV === 'production'
+    ? process.env.EMAIL_PASSWORD
+    : config.development.emailPassword
 
 const app = express()
 const PORT = process.env.PORT || 3000
@@ -23,7 +29,7 @@ app.post('/api/send-email', (req, res) => {
     secure: true, // true only for 465
     auth: {
       user: 'booking@vento.sk',
-      pass: process.env.EMAIL_PASSWORD // Using process.env for email password
+      pass: emailPassword // Using process.env for email password
     }
   })
 
