@@ -9,6 +9,10 @@ const PORT = process.env.PORT || 3000
 app.use(bodyParser.json())
 app.use(cors())
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Vento Mailer API')
+})
+
 app.post('/api/send-email', (req, res) => {
   const { name, email, message } = req.body
 
