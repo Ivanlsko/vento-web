@@ -2,21 +2,18 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
 const cors = require('cors')
-
-const emailPassword =
-  process.env.NODE_ENV === 'production'
-    ? process.env.EMAIL_PASSWORD
-    : require('./config').development.emailPassword
+require('dotenv').config({ path: '../.env' })
 
 const app = express()
 const PORT = process.env.PORT || 3000
-
 app.use(bodyParser.json())
 app.use(cors())
 
 app.get('/', (req, res) => {
   res.send('Welcome to the Vento Mailer API')
 })
+
+const pass = process.env.MAILER_PASS
 
 app.post('/api/send-email', (req, res) => {
   const { name, email, message } = req.body
@@ -28,7 +25,7 @@ app.post('/api/send-email', (req, res) => {
     secure: true, // true only for 465
     auth: {
       user: 'booking@vento.sk',
-      pass: emailPassword // Using process.env for email password
+      pass: pass // Using process.env for email password
     }
   })
 
