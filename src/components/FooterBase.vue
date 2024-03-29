@@ -10,7 +10,7 @@
             <div logo><img src="../assets/images/vento.svg" alt="vento kvintet logo" /></div>
           </div>
           <p paragraph class="mt-6">
-            Sme piati umelci tvoriaci profeionálne hudobné zoskupenie. Vašému podujatiu dodáme
+            Sme piati umelci tvoriaci profeionálne hudobné zoskupenie. Vašemu podujatiu dodáme
             unikátnu atmosféru.
           </p>
         </div>

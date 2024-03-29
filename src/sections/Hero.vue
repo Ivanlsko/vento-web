@@ -16,7 +16,7 @@ import ButtonBase from '../components/ButtonBase.vue'
           <p class="text-sm">Termíny sú k dispozícií</p>
         </div>
         <p id="header-paragraph" class="lg:w-1/2 text-2xl mt-4 sm:mt-10 lg:mt-0">
-          Vašému podujatiu dodáme jedinečnú atmosféru, či už ide o svadbu, firemný večierok alebo
+          Vašemu podujatiu dodáme jedinečnú atmosféru, či už ide o svadbu, firemný večierok alebo
           vernisáž.
         </p>
       </div>

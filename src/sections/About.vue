@@ -15,7 +15,7 @@ const aboutBlocksContent = [
   {
     number: '240+',
     paragraphShort: 'minút repeortáru',
-    paragraphLong: 'Spoločne zostavíme program pre vaše podujatie tak, aby ste boli spokojní.'
+    paragraphLong: 'Spoločne zostavíme program pre Vaše podujatie tak, aby ste boli spokojní.'
   },
   {
     number: '∞',

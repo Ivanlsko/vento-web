@@ -5,7 +5,7 @@ const dropdownContent = {
   celebrations: {
     title: 'Svadby, oslavy, výročia',
     description:
-      'Prestavte si slávnostnú fanfáru, v podaní dychového kvintenta, doprevádzajúcu vás k oltáru. Predstavte si jemné tóny rozplývajúce sa po miestnosti počas oslavy Vášho výročia. Vašemu špeciálnemu dňu dodáme niečo viac. Vytvoríme zvuk k vaším nezabudnuteľným spomienkám. Ak túžite vášmu dňu dodať nádych sofistikovanosti a elegancie, ste tu správne.'
+      'Prestavte si slávnostnú fanfáru, v podaní dychového kvintenta, doprevádzajúcu vás k oltáru. Predstavte si jemné tóny rozplývajúce sa po miestnosti počas oslavy Vášho výročia. Vašemu špeciálnemu dňu dodáme niečo viac. Vytvoríme zvuk k Vašim nezabudnuteľným spomienkám. Ak túžite vášmu dňu dodať nádych sofistikovanosti a elegancie, ste tu správne.'
   },
   culturalEvents: {
     title: 'Kultúrne podujatia',
@@ -15,7 +15,7 @@ const dropdownContent = {
   companyEvents: {
     title: 'Firemné podujatia',
     description:
-      'Túžite po originálnom firemnom podujatí? Či už ide o slávnostnú večeru, uvedenie produktu na trh alebo networkingovú recepciu, Vento kvintent odlíši vašú událosť od každej inej. Môžte sa spoľahnúť, že na vašej firemnej akcii zahráme na správnu nôtu a zanecháme trvalý dojem. Ak má Vaša firma profesionalitu a kreativitu v DNA budeme sa k sebe hodiť.'
+      'Túžite po originálnom firemnom podujatí? Či už ide o slávnostnú večeru, uvedenie produktu na trh alebo networkingovú recepciu, Vento kvintent odlíši Vašú událosť od každej inej. Môžte sa spoľahnúť, že na Vašej firemnej akcii zahráme na správnu nôtu a zanecháme trvalý dojem. Ak má Vaša firma profesionalitu a kreativitu v DNA budeme sa k sebe hodiť.'
   }
 }
 </script>
@@ -25,7 +25,7 @@ const dropdownContent = {
     <div class="w-full lg:w-3/5">
       <h2 class="text-3xl mb-12">
         V našom repertoári sa nachádzajú primárne klasické kompozície. Budeme pre to vhodnou voľbou
-        pre vaše významné události.
+        pre Vaše významné události.
       </h2>
       <ul>
         <DropdownBase

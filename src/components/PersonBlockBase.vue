@@ -18,7 +18,7 @@ const props = defineProps({
   </div>
 
   <div class="bg-darkgrey flex flex-col justify-between p-8 text-center" v-if="props.person?.last">
-    <p class="text-2xl mb-10">Vy nás už poznáte, povedzte nám o sebe a vašom podujatí.</p>
+    <p class="text-2xl mb-10">Vy nás už poznáte, povedzte nám o sebe a Vašom podujatí.</p>
     <ButtonBase :content="'Ozvite sa nám'" :sectionId="'message'"></ButtonBase>
   </div>
 </template>
