@@ -86,7 +86,7 @@ function resetValues() {
         type="date"
         id="date"
         name="date"
-        placeholder=""
+        placeholder="dd/mm/rrrr"
         v-model="date"
         required
       /><br />
