@@ -3,12 +3,28 @@ import { ref } from 'vue'
 import ButtonBase from './ButtonBase.vue'
 import axios from 'axios'
 
+const {
+  MODE: mode,
+  VITE_MAILER_HOST: prod,
+  VITE_MAILER_HOST_DEV: dev,
+  VITE_SEND_EMAIL: path
+} = import.meta.env
+const mailerApiUrl = (mode === 'development' ? dev : prod) + path
+
 const name = ref('')
 const date = ref('')
 const email = ref('')
 const message = ref('')
 
+const buttonStates = {
+  send: 'Odoslať správu',
+  sending: 'Správa sa odosiela',
+  sent: 'Správa bola odoslaná :)'
+}
+const buttonState = ref(buttonStates.send)
+
 function sendMail() {
+  buttonState.value = buttonStates.sending
   const data = {
     name: name.value,
     email: email.value,
@@ -16,21 +32,27 @@ function sendMail() {
     message: message.value
   }
 
-  const endpoint = 'http://localhost:3000/api/send-email'
-
   axios
-    .post(endpoint, data, {
+    .post(mailerApiUrl, data, {
       headers: {
         'Content-Type': 'application/json'
       }
     })
     .then((response) => {
-      console.log('Response:', response.data)
-      console.log('Email sent successfully!')
+      resetValues()
+      buttonState.value = buttonStates.sent
+      setTimeout(() => (buttonState.value = buttonStates.send), 5000)
     })
     .catch((error) => {
       console.error('Error:', error)
     })
+}
+
+function resetValues() {
+  name.value = ''
+  date.value = ''
+  email.value = ''
+  message.value = ''
 }
 </script>
 <template>
@@ -38,7 +60,7 @@ function sendMail() {
     <div>
       <label for="email">Vaša emailová adresa</label><br />
       <input
-        class="border-b-[1px] border-black w-full mt-6 mb-8"
+        class="border-b-[1px] border-black w-full mt-6 mb-8 rounded-none appearance-none"
         type="text"
         id="email"
         name="email"
@@ -49,7 +71,7 @@ function sendMail() {
     <div>
       <label for="name">Meno a priezvisko</label><br />
       <input
-        class="border-b-[1px] border-black w-full mt-6 mb-8"
+        class="border-b-[1px] border-black w-full mt-6 mb-8 rounded-none appearance-none"
         type="text"
         id="name"
         name="name"
@@ -60,7 +82,7 @@ function sendMail() {
     <div>
       <label for="date">Dátum události</label><br />
       <input
-        class="border-b-[1px] border-black w-full mt-6 mb-8"
+        class="border-b-[1px] border-black w-full mt-6 mb-8 rounded-none appearance-none"
         type="date"
         id="date"
         name="date"
@@ -72,7 +94,7 @@ function sendMail() {
     <div>
       <label for="text">Správa</label><br />
       <textarea
-        class="border-b-[1px] border-black w-full mt-6 mb-8"
+        class="border-b-[1px] border-black w-full mt-6 mb-8 rounded-none appearance-none"
         id="text"
         name="text"
         rows="4"
@@ -85,7 +107,7 @@ function sendMail() {
     <div>
       <ButtonBase
         :mode="'black'"
-        :content="'Odoslať správu'"
+        :content="buttonState"
         type="submit"
         value="Submit"
         @click="sendMail"
@@ -93,11 +115,3 @@ function sendMail() {
     </div>
   </form>
 </template>
-
-<style scoped>
-::-webkit-datetime-edit-year-field:not([aria-valuenow]),
-::-webkit-datetime-edit-month-field:not([aria-valuenow]),
-::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
-  color: transparent;
-}
-</style>
