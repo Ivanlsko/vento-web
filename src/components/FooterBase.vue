@@ -19,14 +19,14 @@
         <div class="span-1/6">
           <h5 class="font-medium">Kontakt na nás</h5>
           <p class="mt-6 text-sm">booking@vento.sk</p>
-          <p class="mt-4 text-sm">+421 903 274 341</p>
+          <p class="mt-4 text-sm underline"><a href="tel: +421 903 274 341">+421 903 274 341</a></p>
         </div>
         <nav class="span-1/6">
           <h5 class="font-medium">Navigácia</h5>
           <ul class="text-sm">
-            <li class="mt-6"><a href=""></a>Služby</li>
-            <li class="mt-4"><a href=""></a>O nás</li>
-            <li class="mt-4"><a href=""></a>Členovia</li>
+            <li class="mt-6"><a href="#events">Služby</a></li>
+            <li class="mt-4"><a href="#about">O nás</a></li>
+            <li class="mt-4"><a href="#people">Členovia</a></li>
           </ul>
         </nav>
       </div>
