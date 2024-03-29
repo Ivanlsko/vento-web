@@ -9,7 +9,9 @@ const {
   VITE_MAILER_HOST_DEV: dev,
   VITE_SEND_EMAIL: path
 } = import.meta.env
-const mailerApiUrl = (mode === 'development' ? dev : prod) + path
+
+const mailerBaseUrl = mode === 'development' ? dev : prod
+const mailerApiUrl = mailerBaseUrl + path
 
 const name = ref('')
 const date = ref('')
@@ -22,6 +24,15 @@ const buttonStates = {
   sent: 'Správa bola odoslaná :)'
 }
 const buttonState = ref(buttonStates.send)
+
+function activateServer() {
+  axios
+    .get(mailerBaseUrl)
+    .then((response) => {})
+    .catch((error) => {
+      console.error('Error:', error)
+    })
+}
 
 function sendMail() {
   buttonState.value = buttonStates.sending
@@ -88,6 +99,7 @@ function resetValues() {
         name="date"
         placeholder="dd/mm/rrrr"
         v-model="date"
+        @click="activateServer"
         required
       /><br />
     </div>
@@ -101,6 +113,7 @@ function resetValues() {
         cols="50"
         v-model="message"
         required
+        @click="activateServer"
       ></textarea
       ><br />
     </div>
