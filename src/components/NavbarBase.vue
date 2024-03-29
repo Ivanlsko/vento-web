@@ -53,7 +53,7 @@ function handleMenu() {
     </div>
     <nav class="grow flex-center">
       <ul class="flex-center flex-col grow gap-6 text-4xl">
-        <NavbarList></NavbarList>
+        <NavbarList @link-click="handleMenu()"></NavbarList>
       </ul>
     </nav>
   </div>
