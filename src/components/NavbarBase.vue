@@ -19,8 +19,8 @@ onUnmounted(() => {
 })
 
 function handleMenu() {
-  this.menuOpened = !this.menuOpened
-  if (this.menuOpened) {
+  menuOpened.value = !menuOpened.value // Update the value of menuOpened directly
+  if (menuOpened.value) {
     document.body.style.overflow = 'hidden'
   } else {
     document.body.style.overflow = 'unset'
@@ -30,9 +30,11 @@ function handleMenu() {
 
 <template>
   <nav v-if="!menuOpened" class="flex justify-between absolute top-0 w-full p-6 text-white">
-    <div id="logo"><img src="../assets/images/vento.svg" alt="logo vento kvintet" /></div>
+    <div id="logo" class="flex-center -mt-2">
+      <img src="../assets/images/vento.svg" alt="logo vento kvintet" />
+    </div>
     <div v-if="windowWidth < 768">
-      <div @click="handleMenu()" class="h-8 w-8">
+      <div @click="handleMenu" class="h-8 w-8">
         <img src="../assets/icons/menu.svg" alt="close menu icon" class="h-full" />
       </div>
     </div>
@@ -40,7 +42,7 @@ function handleMenu() {
       <ul class="flex items-center mr-4">
         <NavbarList></NavbarList>
       </ul>
-      <ButtonBase :content="'Ozvite sa nám'"></ButtonBase>
+      <ButtonBase :content="'Ozvite sa nám'" :sectionId="'message'"></ButtonBase>
     </div>
   </nav>
   <div v-else class="w-full h-screen bg-white fixed top-0 overflow-hidden flex flex-col">
