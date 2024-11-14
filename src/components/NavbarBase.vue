@@ -1,10 +1,18 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref, computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import ButtonBase from './ButtonBase.vue'
 import NavbarList from './NavbarList.vue'
 
 const windowWidth = ref(window.innerWidth)
 const menuOpened = ref(false)
+const route = useRoute()
+const router = useRouter()
+
+// Compute the color based on route
+const isWhite = computed(() => {
+  return route.path === '/'
+})
 
 const handleResize = () => {
   windowWidth.value = window.innerWidth
@@ -19,7 +27,7 @@ onUnmounted(() => {
 })
 
 function handleMenu() {
-  menuOpened.value = !menuOpened.value // Update the value of menuOpened directly
+  menuOpened.value = !menuOpened.value
   if (menuOpened.value) {
     document.body.style.overflow = 'hidden'
   } else {
@@ -29,20 +37,35 @@ function handleMenu() {
 </script>
 
 <template>
-  <nav v-if="!menuOpened" class="flex justify-between absolute top-0 w-full p-6 text-white">
-    <div id="logo" class="flex-center -mt-2">
+  <nav
+    v-if="!menuOpened"
+    class="flex justify-between absolute top-0 w-full p-6"
+    :class="isWhite ? 'text-white' : 'text-black'"
+  >
+    <div v-if="isWhite" id="logo-white" class="flex-center -mt-2" @click="router.push('/')">
       <img src="../assets/images/vento.svg" alt="logo vento kvintet" />
+    </div>
+    <div v-else id="logo-black" class="flex-center -mt-2" @click="router.push('/')">
+      <img src="../assets/images/vento-black.svg" alt="logo vento kvintet" />
     </div>
     <div v-if="windowWidth < 768">
       <div @click="handleMenu" class="h-8 w-8">
-        <img src="../assets/icons/menu.svg" alt="close menu icon" class="h-full" />
+        <img
+          :src="isWhite ? '../assets/icons/menu.svg' : '../assets/icons/menu-black.svg'"
+          alt="menu icon"
+          class="h-full"
+        />
       </div>
     </div>
     <div v-else class="flex">
       <ul class="flex items-center mr-4">
-        <NavbarList></NavbarList>
+        <NavbarList :isWhite="isWhite"></NavbarList>
       </ul>
-      <ButtonBase :content="'Ozvite sa nám'" :sectionId="'message'"></ButtonBase>
+      <ButtonBase
+        :content="'Ozvite sa nám'"
+        :sectionId="'message'"
+        :mode="isWhite ? 'white' : 'black'"
+      ></ButtonBase>
     </div>
   </nav>
   <div v-else class="w-full h-screen bg-white fixed top-0 overflow-hidden flex flex-col">

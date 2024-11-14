@@ -34,13 +34,15 @@ const testimonials = [
 <template>
   <section class="bg-black text-white">
     <!-- to-do: definovat h# selectory v hlavnom cssku -->
-    <h2 class="text-3xl mb-12">Čo o nás hovoria iní</h2>
-    <div id="testimonials" class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      <TestimonialBase
-        v-for="(content, key) in testimonials"
-        :key="key"
-        :content="content"
-      ></TestimonialBase>
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl mb-12">Čo o nás hovoria iní</h2>
+      <div id="testimonials" class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <TestimonialBase
+          v-for="(content, key) in testimonials"
+          :key="key"
+          :content="content"
+        ></TestimonialBase>
+      </div>
     </div>
   </section>
 </template>

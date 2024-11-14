@@ -32,13 +32,15 @@ const people = [
 
 <template>
   <section id="people" class="bg-black text-white">
-    <h1 class="text-3xl mb-12">Umelci, hudobníci... ľudia</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <PersonBlockBase
-        v-for="(person, key) in people"
-        :key="key"
-        :person="person"
-      ></PersonBlockBase>
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-3xl mb-12">Umelci, hudobníci... ľudia</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <PersonBlockBase
+          v-for="(person, key) in people"
+          :key="key"
+          :person="person"
+        ></PersonBlockBase>
+      </div>
     </div>
   </section>
 </template>

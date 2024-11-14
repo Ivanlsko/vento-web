@@ -4,7 +4,7 @@ import ButtonBase from '../components/ButtonBase.vue'
 
 <template>
   <section
-    class="bg-[url('https://vento.sk/media/vento_mobile.webp')] bg-top min-h-[1000px] lg:bg-[url('https://vento.sk/media/vento_desktop.webp')] w-full h-screen bg-cover flex-center bg-no-repeat lg:bg-auto"
+    class="bg-[url('https://vento.sk/media/vento_mobile.webp')] bg-top min-h-[1000px] lg:bg-[url('https://vento.sk/media/vento_desktop.webp')] w-full h-screen bg-cover flex-center bg-no-repeat lg:bg-auto 2xl:bg-cover"
   >
     <div id="hero-content" class="text-white sm:mx-8 lg:mx-24 mt-28">
       <h1 class="col-span-2 text-[3rem] sm:text-5xl -mb-4 sm:mb-20">
